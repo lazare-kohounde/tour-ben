@@ -9,7 +9,7 @@ class CreateReservationsTable extends Migration
     public function up()
     {
         Schema::create('reservations', function (Blueprint $table) {
-            $table->id('idRes');
+            $table->id();
             $table->unsignedBigInteger('idTouriste');
             $table->enum('statutRes', ['en_attente', 'confirmee', 'annulee']);
             $table->date('dateRes');
@@ -18,8 +18,8 @@ class CreateReservationsTable extends Migration
             $table->timestamps();
 
 
-            $table->foreignId('site_id')->references('idSit')->on('sites')->onDelete('cascade');
-            $table->foreignId('evenement_id')->references('idEve')->on('evenements')->onDelete('cascade');
+            $table->foreignId('site_id')->references('id')->on('sites')->onDelete('cascade');
+            $table->foreignId('evenement_id')->references('id')->on('evenements')->onDelete('cascade');
             $table->foreign('idTouriste')->references('id')->on('touristes')->onDelete('cascade');
         });
     }

@@ -9,8 +9,8 @@ class CreatePaiementsTable extends Migration
     public function up()
     {
         Schema::create('paiements', function (Blueprint $table) {
-            $table->id('idPai');
-            $table->unsignedBigInteger('id');
+            $table->id();
+            $table->unsignedBigInteger('id_user');
             $table->integer('montant');
             $table->enum('statutPai', ['en_attente', 'valide', 'refuse']);
             $table->date('datePai');
@@ -18,7 +18,7 @@ class CreatePaiementsTable extends Migration
             $table->string('referencePai');
             $table->timestamps();
 
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

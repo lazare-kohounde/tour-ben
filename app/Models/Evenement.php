@@ -9,15 +9,19 @@ class Evenement extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'idEve';
-
     protected $fillable = [
-        'nomEve', 'description', 'prix', 'disponibilite','image',
+        'nomEve',
+        'description',
+        'prix',
+        'disponibilite',
+        'image',
     ];
+    
+    
 
     public function reservations()
     {
-        return $this->hasMany(Reservation::class, 'idEve');
+        return $this->hasMany(Reservation::class, 'id');
     }
   
 }
