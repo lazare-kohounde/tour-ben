@@ -33,17 +33,14 @@
     <div class="row gx-0">
         <div class="col-lg-4 ms-auto text-end">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
-                <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
-                    <small class="me-3 text-light">
-                        <i class="fa fa-user me-2"></i>Inscription
-                    </small>
-                </a>
-
-                <a href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    <small class="me-3 text-light">
-                        <i class="fa fa-sign-in-alt me-2"></i>Connexion
-                    </small>
-                </a>
+            @guest
+            <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
+                <small class="me-3 text-light">
+                    <i class="fa fa-user me-2"></i>Inscription
+                </small>
+            </a>
+            @endguest
+                
 
                 <div class="dropdown">
                     <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i
@@ -75,23 +72,70 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
             </div>
             <div class="modal-body">
-                <form id="loginForm">
+                <!-- Affichage du statut de session (ex: "mot de passe réinitialisé") -->
+                @if (session('status'))
+                <div class="alert alert-success mb-4">
+                    {{ session('status') }}
+                </div>
+                @endif
+
+                <!-- Formulaire de connexion -->
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
+
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+                        <input
+                            type="email"
+                            class="form-control @error('email') is-invalid @enderror"
+                            id="email"
+                            name="email"
+                            value="{{ old('email') }}"
+                            required
+                            autofocus
+                            autocomplete="username"
+                            placeholder="Votre email">
+                        @error('email')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
+
                     <div class="mb-3">
-                        <label for="motdepasse" class="form-label">Mot de passe</label>
-                        <input type="password" class="form-control" id="motdepasse" placeholder="Votre mot de passe"
-                            required>
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input
+                            type="password"
+                            class="form-control @error('password') is-invalid @enderror"
+                            id="password"
+                            name="password"
+                            required
+                            autocomplete="current-password"
+                            placeholder="Votre mot de passe">
+                        @error('password')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                     </div>
-                    <button type="submit" class="btn btn-secondary text-white w-100">Se connecter</button>
+
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="remember" name="remember">
+                        <label class="form-check-label" for="remember">Se souvenir de moi</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary text-white w-100">Se connecterA</button>
                 </form>
+
                 <div class="mt-3 text-center">
-                    <small>Pas encore de compte ?
-                        <a href="#" data-bs-target="#registerModal" data-bs-toggle="modal"
-                            data-bs-dismiss="modal">Inscrivez-vous ici</a>
+                    <small>
+                        Pas encore de compte ?
+                        <a href="#" data-bs-target="#registerModal" data-bs-toggle="modal" data-bs-dismiss="modal">Inscrivez-vous ici</a>
                     </small>
+                </div>
+
+                <div class="mt-2 text-end">
+                    @if (Route::has('password.request'))
+                    <a class="text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                        Mot de passe oublié ?
+                    </a>
+                    @endif
                 </div>
             </div>
         </div>
@@ -107,50 +151,70 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
             </div>
             <div class="modal-body">
-                <form id="registerForm">
-                    <div class="row g-3">
-                        <div class="col-md-6 form-floating">
-                            <input type="text" class="form-control" id="nom" placeholder="Votre nom"
-                                required>
-                            <label for="nom">Nom</label>
-                        </div>
-                        <div class="col-md-6 form-floating">
-                            <input type="text" class="form-control" id="prenom" placeholder="Votre prenom"
-                                required>
-                            <label for="prenom">Prenom</label>
-                        </div>
-                        <div class="col-12 form-floating">
-                            <input type="email" class="form-control" id="email" placeholder="Votre email"
-                                required>
-                            <label for="email">Email</label>
-                        </div>
-                        <div class="col-12 form-floating">
-                            <input type="password" class="form-control" id="motdepasse" placeholder="Mot de passe"
-                                required>
-                            <label for="motdepasse">Mot de passe</label>
-                        </div>
-                        <div class="col-12 form-floating">
-                            <input type="password" class="form-control" id="motdepasseconfirmer"
-                                placeholder="Confirmez le mot de passe" required>
-                            <label for="motdepasseconfirmer">Confirmation mot de passe</label>
-                        </div>
+                <!-- Affichage des erreurs de validation -->
+                @if ($errors->any() && session('form') === 'register')
+                <div class="alert alert-danger mb-4">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
 
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+                    <div class="row g-3">
+                        <div class="col-md-12 form-floating">
+                            <input type="text" class="form-control @error('name') is-invalid @enderror"
+                                id="name" name="name" placeholder="Votre nom"
+                                value="{{ old('name') }}" required autofocus>
+                            <label for="name">Nom</label>
+                            @error('name')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        
+                        <div class="col-12 form-floating">
+                            <input type="email" class="form-control @error('email') is-invalid @enderror"
+                                id="email" name="email" placeholder="Votre email"
+                                value="{{ old('email') }}" required autocomplete="email">
+                            <label for="email">Email</label>
+                            @error('email')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-12 form-floating">
+                            <input type="password" class="form-control @error('password') is-invalid @enderror"
+                                id="password" name="password" placeholder="Mot de passe"
+                                required autocomplete="new-password">
+                            <label for="password">Mot de passe</label>
+                            @error('password')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="col-12 form-floating">
+                            <input type="password" class="form-control"
+                                id="password_confirmation" name="password_confirmation"
+                                placeholder="Confirmez le mot de passe" required autocomplete="new-password">
+                            <label for="password_confirmation">Confirmation mot de passe</label>
+                        </div>
                         <div class="col-12">
                             <button class="btn btn-secondary w-100 py-3" type="submit">S'inscrire</button>
-
                         </div>
                     </div>
                 </form>
                 <div class="mt-3 text-center">
-                    <small>Pas encore de compte ?
-                        <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal"
-                            data-bs-dismiss="modal">Connectez-vous</a>
+                    <small>
+                        Déjà un compte ?
+                        <a href="#" data-bs-target="#loginModal" data-bs-toggle="modal" data-bs-dismiss="modal">Connectez-vous</a>
                     </small>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <!-- Inclure Bootstrap JS (via CDN ou local) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
