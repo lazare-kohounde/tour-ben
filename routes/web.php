@@ -2,15 +2,17 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EvenementController;
 
 // Route côté client
 
 Route::get('/', function () {return view('client.pages.index');})->name('accueilClient');
-Route::get('/site_touristique', function(){ return view('client.pages.site_touristique');})->name(name: 'site_touristique');
+Route::get('/site_touristique', [SiteController::class, 'show'])->name('site_touristique');
 Route::get('/services', function () {return view('client.pages.services');})->name('services');
 //Route::get('/evenements', function () {return view('client.pages.evenements');})->name('evenements');
+Route::get('/evenements', [EvenementController::class, 'show'])->name('evenements');
 Route::get('/destination', function () {return view('client.pages.destination');})->name('destination');
 Route::get('/tour', function () {return view('client.pages.tours');})->name('tour');
 Route::get('/booking', function () {return view('client.pages.booking');})->name('booking');
@@ -54,6 +56,23 @@ Route::put('/log-admin/evenements/{id}', [EvenementController::class, 'update'])
 Route::delete('/log-admin/evenements/{id}', [EvenementController::class, 'destroy'])->name('evenements.destroy');
 
 
+
+Route::get('/log-admin/sites', [SiteController::class, 'index'])->name('sites.index');
+Route::post('/log-admin/sites', [SiteController::class, 'store'])->name('sites.store');
+Route::put('/log-admin/sites/{id}', [SiteController::class, 'update'])->name('sites.update');
+Route::delete('/log-admin/sites/{id}', [SiteController::class, 'destroy'])->name('sites.destroy');
+
+
+
 Route::get('/log-admin/site-touristique', [AdminController::class, 'adminSite'])->name('admin.site');
 Route::get('/log-admin/reservation', [AdminController::class, 'adminReservation'])->name('admin.reservation');
+
 // Route::post('/log-admin/evenementt', [EvenementController::class, 'store'])->name('evenements.store');
+
+
+
+// route client esdras
+Route::get('/historique', function () {return view('client.pages.historique');})->name('historique');
+Route::get('/detail-site-touristique', [SiteController::class, 'show'])->name('site.detail');
+
+// testimonial, booking, tour, gallery, guide, destination, services on effacera toutes les routes conernés

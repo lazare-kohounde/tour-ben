@@ -173,7 +173,7 @@
                     </li>
 
                     <li class="has-submenu">
-                        <a href="{{ Route('admin.site') }}"><i class="dripicons-ticket"></i>Site
+                        <a href="{{ Route('sites.index') }}"><i class="dripicons-ticket"></i>Site
                             touristique</a>
                     </li>
 

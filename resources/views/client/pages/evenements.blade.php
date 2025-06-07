@@ -66,152 +66,43 @@
                 <h5 class="section-title px-3">Evenement culturels</h5>
                 <h1 class="mb-0">Rejoins Nous </h1>
             </div>
-            <div class="packages-carousel owl-carousel">
-                <div class="packages-item">
-                    <div class="packages-img">
-                        <img src="/img/evenement/évènement1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                        <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
-                            style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt me-2"></i>Benin</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt me-2"></i>1days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>9Person</small>
-                        </div>
-                        <div class="packages-price py-2 px-4">$349.00</div>
-                    </div>
-                    <div class="packages-content bg-light">
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-0">Ouidah</h5>
-                            <small class="text-uppercase">Hotel Deals</small>
-                            <div class="mb-3">
-                            </div>
-                            <p class="mb-4">Le Festival Couleurs d’Afrique est un événement culturel béninois qui
-                                célèbre l’art et la diversité africaine à travers des expositions, spectacles et
-                                créations artistiques.</p>
-                        </div>
-                        <div class="row bg-primary rounded-bottom mx-0">
-                            <div class="col-6 text-start px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">voir plus</a>
-                            </div>
-                            <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Participer</a>
-                            </div>
+            <div class="row">
+                @forelse($evenements as $evenement)
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="card w-100 h-100">
+                        @if($evenement->image)
+                        <img src="{{ asset('storage/' . $evenement->image) }}"
+                            class="card-img-top"
+                            alt="Image de {{ $evenement->nomEve }}"
+                            style="height:200px; object-fit:cover;">
+                        @else
+                        <img src="/img/evenement/default.jpg"
+                            class="card-img-top"
+                            alt="Image par défaut"
+                            style="height:200px; object-fit:cover;">
+                        @endif
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $evenement->nomEve }}</h5>
+                            <p class="card-text mb-2">{{ $evenement->description }}</p>
+                            <p class="mb-2">
+                                <strong>Prix :</strong>
+                                {{ $evenement->prix > 0 ? number_format($evenement->prix, 0, ',', ' ') . ' FCFA' : 'Gratuit' }}
+                            </p>
+                            <span class="mb-2 badge {{ $evenement->disponibilite ? 'badge-success' : 'badge-danger' }}">
+                                {{ $evenement->disponibilite ? 'Disponible' : 'Indisponible' }}
+                            </span>
+                            <small class="text-muted mt-auto">Ajouté le {{ \Carbon\Carbon::parse($evenement->created_at)->format('d/m/Y à H:i') }}</small>
                         </div>
                     </div>
                 </div>
-                <div class="packages-item">
-                    <div class="packages-img">
-                        <img src="/img/evenement/évènement2.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                        <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
-                            style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt me-2"></i>Benin</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>89 Person</small>
-                        </div>
-                        <div class="packages-price py-2 px-4">$449.00</div>
-                    </div>
-                    <div class="packages-content bg-light">
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-0">The New California</h5>
-                            <small class="text-uppercase">Hotel Deals</small>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo
-                                quia quae illum aperiam fugiat voluptatem repellat</p>
-                        </div>
-                        <div class="row bg-primary rounded-bottom mx-0">
-                            <div class="col-6 text-start px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                            </div>
-                            <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
+                @empty
+                <div class="col-12 text-center">
+                    <p>Aucun événement trouvé.</p>
                 </div>
-                <div class="packages-item">
-                    <div class="packages-img">
-                        <img src="/img/evenement/évènement3.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                        <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
-                            style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt me-2"></i>Venice - Italy</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                        </div>
-                        <div class="packages-price py-2 px-4">$549.00</div>
-                    </div>
-                    <div class="packages-content bg-light">
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-0">Discover Japan</h5>
-                            <small class="text-uppercase">Hotel Deals</small>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo
-                                quia quae illum aperiam fugiat voluptatem repellat</p>
-                        </div>
-                        <div class="row bg-primary rounded-bottom mx-0">
-                            <div class="col-6 text-start px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                            </div>
-                            <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="packages-item">
-                    <div class="packages-img">
-                        <img src="img/packages-1.jpg" class="img-fluid w-100 rounded-top" alt="Image">
-                        <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
-                            style="width: 100%; bottom: 0; left: 0; z-index: 5;">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt me-2"></i>Thayland</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2 Person</small>
-                        </div>
-                        <div class="packages-price py-2 px-4">$649.00</div>
-                    </div>
-                    <div class="packages-content bg-light">
-                        <div class="p-4 pb-0">
-                            <h5 class="mb-0">Thayland Trip</h5>
-                            <small class="text-uppercase">Hotel Deals</small>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nemo
-                                quia quae illum aperiam fugiat voluptatem repellat</p>
-                        </div>
-                        <div class="row bg-primary rounded-bottom mx-0">
-                            <div class="col-6 text-start px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Read More</a>
-                            </div>
-                            <div class="col-6 text-end px-0">
-                                <a href="#" class="btn-hover btn text-white py-2 px-4">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
+
+
         </div>
     </div>
     <!-- Packages End -->
@@ -299,7 +190,7 @@
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Book Now</button>
+                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Participer</button>
                             </div>
                         </div>
                     </form>

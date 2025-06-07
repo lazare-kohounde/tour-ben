@@ -152,38 +152,8 @@
                 <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                     <li class="nav-item">
                         <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
-                            data-bs-toggle="pill" href="#tab-1">
-                            <span class="text-dark" style="width: 150px;">Tous</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-2">
-                            <span class="text-dark" style="width: 150px;">Abomey</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-3">
-                            <span class="text-dark" style="width: 150px;">Ouidah</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-4">
-                            <span class="text-dark" style="width: 150px;">Porto-Novo</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-5">
-                            <span class="text-dark" style="width: 150px;">Nattingou</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                            href="#tab-6">
-                            <span class="text-dark" style="width: 150px;">Dassa-Zoume</span>
+                       href="{{Route('site_touristique')}}">
+                            <span class="text-dark" style="width: 150px;">Tous voir</span>
                         </a>
                     </li>
                 </ul>
@@ -194,8 +164,8 @@
                         <div class="row g-4">
                             <div class="col-xl-8">
                                 <div class="row g-4">
+                                    {{-- Ouidah --}}
                                     <div class="col-lg-6">
-                                        {{-- Ouidah --}}
                                         <div class="destination-img">
                                             <img class="img-fluid rounded w-100"
                                                 src="/img/sites/porte_du_non_retour.jpg"
@@ -207,7 +177,7 @@
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
                                                     Photos</a>
                                                 <h4 class="text-white mb-2 mt-3">Ouidah</h4>
-                                                <a href="#" class="btn-hover text-white">Reserver <i
+                                                <a href="{{Route('site.detail')}}" class="btn-hover text-white">Reserver <i
                                                         class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
@@ -226,7 +196,7 @@
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
                                                     Photos</a>
                                                 <h4 class="text-white mb-2 mt-3">Ouidah</h4>
-                                                <a href="#" class="btn-hover text-white">Reserver<i
+                                                <a href="{{Route('site.detail')}}" class="btn-hover text-white">Reserver<i
                                                         class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
@@ -246,7 +216,7 @@
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
                                                     Photos</a>
                                                 <h4 class="text-white mb-2 mt-3">Abomey</h4>
-                                                <a href="#" class="btn-hover text-white">Reserver <i
+                                                <a href="{{Route('site.detail')}}" class="btn-hover text-white">Reserver <i
                                                         class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
@@ -265,7 +235,7 @@
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
                                                     Photos</a>
                                                 <h4 class="text-white mb-2 mt-3">Natitingou</h4>
-                                                <a href="#" class="btn-hover text-white">Reserver <i
+                                                <a href="{{Route('site.detail')}}" class="btn-hover text-white">Reserver <i
                                                         class="fa fa-arrow-right ms-2"></i></a>
                                             </div>
                                             <div class="search-icon">
@@ -287,259 +257,11 @@
                                             class="btn btn-primary text-white rounded-pill border py-2 px-3">20
                                             Photos</a>
                                         <h4 class="text-white mb-2 mt-3">Cotonou</h4>
-                                        <a href="#" class="btn-hover text-white">reserver <i
+                                        <a href="{{Route('site.detail')}}" class="btn-hover text-white">reserver <i
                                                 class="fa fa-arrow-right ms-2"></i></a>
                                     </div>
                                     <div class="search-icon">
                                         <a href="img/destination-9.jpg" data-lightbox="destination-4"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Dassa-Zoume --}}
-                            <div class="col-lg-4">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/grotte.jpg"
-                                        alt="Les grottes trouées aux pieds humains"
-                                        style="height: 250px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3">20
-                                            Photos</a>
-                                        <h4 class="text-white mb-2 mt-3">Dassa-Zoume</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-4.jpg" data-lightbox="destination-4"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Atacora --}}
-                            <div class="col-lg-4">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/cite_des_tata.jpeg"
-                                        alt="Cité des tatas" style="height: 250px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3">20
-                                            Photos</a>
-                                        <h4 class="text-white mb-2 mt-3">Atacora</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-5.jpg" data-lightbox="destination-5"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Ouidah --}}
-                            <div class="col-lg-4">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/temples des pyton ouidah.jpg"
-                                        alt="Le temple desd pythons de Ouidah"
-                                        style="height: 250px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3">20
-                                            Photos</a>
-                                        <h4 class="text-white mb-2 mt-3">Ouidah</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-6.jpg" data-lightbox="destination-6"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Tri section Abomey --}}
-                    <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/palais_royal_abomey.jpg"
-                                        alt="Palais royal d'Abomey" style="height: 450px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <h4 class="text-white mb-2 mt-3">Palais royal</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver<i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="/img/sites/palais_royal_abomey.jpg" data-lightbox="destination-5"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/behanzin.jpg"
-                                        alt="Le rois Behanzin" style="height: 450px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <h4 class="text-white mb-2 mt-3">Le roi Behanzin</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver<i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-6.jpg" data-lightbox="destination-6"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Tri section Ouidah --}}
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/memoire.png" alt=""
-                                        style="height: 450px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <h4 class="text-white mb-2 mt-3">Mémorial du Jubilé de l'An 2000</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="/img/sites/memoire.png" data-lightbox="destination-5"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            {{-- Tri section Ouidah la porte du non retour --}}
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/porte_du_non_retour.jpg"
-                                        alt="" style="height: 450px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <h4 class="text-white mb-2 mt-3">La porte du non retour</h4>
-                                        <a href="#" class="btn-hover text-white">Reserver<i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-6.jpg" data-lightbox="destination-6"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Tri section Porto-Novo --}}
-                    <div id="tab-4" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/mosquee_porto.jpg"
-                                        alt="La mosquee historique de Porto-Novo"
-                                        style="height: 450px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <h4 class="text-white mb-2 mt-3"> Mosquee historique de Porto-Novo</h4>
-                                        <a href="#" class="btn-hover text-white">reserver <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="/img/sites/mosquee_porto.jpg" data-lightbox="destination-5"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/Temple_du_monstre_à_9_têtes_au_quartier_Bèsan_à_Porto-novo_Bénin.jpg" alt=""
-                                        style="height: 450px; object-fit: cover";>
-                                    <div class="destination-overlay p-4">
-                                        <h4 class="text-white mb-2 mt-3">Temple du monstre à 9 têtes au quartier Bèsan à Porto-novo</h4>
-                                        <a href="#" class="btn-hover text-white">reserver <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="Temple_du_monstre_à_9_têtes_au_quartier_Bèsan_à_Porto-novo_Bénin" data-lightbox="destination-6"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Tri section natitingou --}}
-                    <div id="tab-5" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" 
-                                    src="/img/sites/tata_somba.jpg" 
-                                    alt="sites historique des tata soba"
-                                    style="height: 450px; object-fit: cover">
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3">Mémorial du Jubilé de l'An 2000</a>
-                                        <h4 class="text-white mb-2 mt-3">Reserver</h4>
-                                        <a href="#" class="btn-hover text-white"> <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-5.jpg" data-lightbox="destination-5"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" 
-                                    src="/img/sites/natitingou.jpg" 
-                                    alt=""
-                                    style="height: 450px; object-fit: cover">
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3"></a>
-                                        <h4 class="text-white mb-2 mt-3"><Nav>Natitingou</Nav></h4>
-                                        <a href="#" class="btn-hover text-white"> statue dorée de Bio Guerra <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-6.jpg" data-lightbox="destination-6"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {{-- Tri section dassa zoume --}}
-                    <div id="tab-6" class="tab-pane fade show p-0">
-                        <div class="row g-4">
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/grotte.jpg" alt="grottes de dassa"
-                                    style="height: 450px; object-fit: cover">
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3"></a>
-                                        <h4 class="text-white mb-2 mt-3">Grottes de Dassa</h4>
-                                        <a href="#" class="btn-hover text-white"><i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-5.jpg" data-lightbox="destination-5"><i
-                                                class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="destination-img">
-                                    <img class="img-fluid rounded w-100" src="/img/sites/colline_dassa.jpg" alt="colines de dassa"
-                                    style="height: 450px; object-fit: cover">
-                                    <div class="destination-overlay p-4">
-                                        <a href="#"
-                                            class="btn btn-primary text-white rounded-pill border py-2 px-3"></a>
-                                        <h4 class="text-white mb-2 mt-3">Dassa </h4>
-                                        <a href="#" class="btn-hover text-white">Colline de dassa  <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                    <div class="search-icon">
-                                        <a href="img/destination-6.jpg" data-lightbox="destination-6"><i
                                                 class="fa fa-plus-square fa-1x btn btn-light btn-lg-square text-primary"></i></a>
                                     </div>
                                 </div>
@@ -552,361 +274,120 @@
     </div>
     <!-- Destination End -->
 
-    <!-- Gallery Start -->
-    <div class="container-fluid galler my-5">
-        <div class="mx-auto text-center mb-5" style="max-width: 900px;">
-            <h5 class="section-title px-3">Rendez‑vous culturel</h5>
-            <h1 class="mb-4">Évènements et Sites Touristiques</h1>
-            <p class="mb-0">Découvrez les plus beaux sites touristiques et les évènements culturels incontournables. Explorez, planifiez et vivez des expériences uniques à travers le monde.
+    <!-- Evènement Start -->
+    <div class="container-fluid packages py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Evenement culturels</h5>
+                <h1 class="mb-0">Rejoins Nous </h1>
+            </div>
 
-            </p>
-        </div>
-        <div class="tab-class text-center">
-            <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
-                <li class="nav-item">
-                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
-                        data-bs-toggle="pill" href="#GalleryTab-1">
-                        <span class="text-dark" style="width: 150px;">Tous</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="d-flex py-2 mx-3 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                        href="#GalleryTab-2">
-                        <span class="text-dark" style="width: 150px;">Sites historiques</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                        href="#GalleryTab-3">
-                        <span class="text-dark" style="width: 150px;">Monuments naturels</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                        href="#GalleryTab-4">
-                        <span class="text-dark" style="width: 150px;">Festivals et concerts</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill" data-bs-toggle="pill"
-                        href="#GalleryTab-5">
-                        <span class="text-dark" style="width: 150px;">Expositions musées</span>
-                    </a>
-                </li>
-            </ul>
-            <div class="tab-content">
-                <div id="GalleryTab-1" class="tab-pane fade show p-0 active">
-                    <div class="row g-2">
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="/img/sites/porte_du_non_retour.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-1.jpg" data-lightbox="gallery-1" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="packages-item d-flex flex-column h-120 w-100">
+                        <div class="packages-img position-relative">
+                            <img src="/img/evenement/event2.jpg" class="img-fluid w-100 rounded-top object-fit-cover"
+                                alt="Image" style="height:250px;">
+                            <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
+                                style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-map-marker-alt me-2"></i>Cotonou</small>
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-calendar-alt me-2"></i>10/05/2025</small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>2000
+                                    Personnes</small>
                             </div>
+                            <div class="packages-price py-2 px-4">25000 FCFA</div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="/img/evenement/évènement1.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-2.jpg" data-lightbox="gallery-2" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
+                        <div class="packages-content bg-light flex-grow-1 d-flex flex-column">
+                            <div class="p-4 pb-0">
+                                <h5 class="mb-2">Ouidah</h5>
+                                <p class="mb-4">Le Festival Couleurs d’Afrique est un événement culturel béninois qui
+                                    célèbre l’art et la diversité africaine à travers des expositions, spectacles et
+                                    créations artistiques.</p>
                             </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="/img/sites/monument_amazone.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
+                            <div class="row bg-primary rounded-bottom mx-0 mt-auto">
+                                <div class="col-6 text-start px-0">
+                                    <a href="#" class="btn-hover btn text-white py-2 px-4">voir plus</a>
                                 </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-3.jpg" data-lightbox="gallery-3" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="/img/evenement/évènement2.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-4.jpg" data-lightbox="gallery-4" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="/img/sites/temples des pyton ouidah.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-5.jpg" data-lightbox="gallery-5" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="/img/evenement/évènement3.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-6.jpg" data-lightbox="gallery-6" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="/img/sites/memoire.png" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-7.jpg" data-lightbox="gallery-7" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="/img/evenement/évènement4.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-8.jpg" data-lightbox="gallery-8" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="/img/sites/behanzin.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-9.jpg" data-lightbox="gallery-9" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-3 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="/img/evenement/évènement5.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-10.jpg" data-lightbox="gallery-10" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
+                                <div class="col-6 text-end px-0">
+                                    <a href="#" class="btn-hover btn text-white py-2 px-4">Participer</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="GalleryTab-2" class="tab-pane fade show p-0">
-                    <div class="row g-2">
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-2.jpg" data-lightbox="gallery-2" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="packages-item d-flex flex-column h-120 w-100">
+                        <div class="packages-img position-relative">
+                            <img src="/img/evenement/vodoun5.jpg" class="img-fluid w-100 rounded-top object-fit-cover"
+                                alt="Image" style="height:250px;">
+                            <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
+                                style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-map-marker-alt me-2"></i>Ouidah</small>
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-calendar-alt me-2"></i>10/01/2026</small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>Nombre
+                                    illimité</small>
                             </div>
+                            <div class="packages-price py-2 px-4">Gratuit</div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-3.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
+                        <div class="packages-content bg-light flex-grow-1 d-flex flex-column">
+                            <div class="p-4 pb-0">
+                                <h5 class="mb-2">Discover Bénin</h5>
+                                <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+                                    nemo quia quae illum aperiam fugiat voluptatem repellat</p>
+                            </div>
+                            <div class="row bg-primary rounded-bottom mx-0 mt-auto">
+                                <div class="col-6 text-start px-0">
+                                    <a href="#" class="btn-hover btn text-white py-2 px-4">voir plus</a>
                                 </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-3.jpg" data-lightbox="gallery-3" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
+                                <div class="col-6 text-end px-0">
+                                    <a href="#" class="btn-hover btn text-white py-2 px-4">Participer</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="GalleryTab-3" class="tab-pane fade show p-0">
-                    <div class="row g-2">
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-2.jpg" data-lightbox="gallery-2" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
+                <div class="col-md-4 mb-4 d-flex">
+                    <div class="packages-item d-flex flex-column h-120 w-100">
+                        <div class="packages-img position-relative">
+                            <img src="img/evenement/vodoun6.jpg" class="img-fluid w-100 rounded-top object-fit-cover"
+                                alt="Image" style="height:250px;">
+                            <div class="packages-info d-flex border border-start-0 border-end-0 position-absolute"
+                                style="width: 100%; bottom: 0; left: 0; z-index: 5;">
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-map-marker-alt me-2"></i>Porto-Novo</small>
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-calendar-alt me-2"></i>3 days</small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-user me-2"></i>1000
+                                    personnes ou plus</small>
                             </div>
+                            <div class="packages-price py-2 px-4">3000 FCFA</div>
                         </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-3.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-3.jpg" data-lightbox="gallery-3" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
+                        <div class="packages-content bg-light flex-grow-1 d-flex flex-column">
+                            <div class="p-4 pb-0">
+                                <h5 class="mb-2">Adjara party</h5>
+                                <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt
+                                    nemo quia quae illum aperiam fugiat voluptatem repellat</p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="GalleryTab-4" class="tab-pane fade show p-0">
-                    <div class="row g-2">
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
+                            <div class="row bg-primary rounded-bottom mx-0 mt-auto">
+                                <div class="col-6 text-start px-0">
+                                    <a href="#" class="btn-hover btn text-white py-2 px-4">voir plus</a>
                                 </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-2.jpg" data-lightbox="gallery-2" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-3.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-3.jpg" data-lightbox="gallery-3" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="GalleryTab-5" class="tab-pane fade show p-0">
-                    <div class="row g-2">
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-2.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-2.jpg" data-lightbox="gallery-2" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-2">
-                            <div class="gallery-item h-100">
-                                <img src="img/gallery-3.jpg" class="img-fluid w-100 h-100 rounded" alt="Image">
-                                <div class="gallery-content">
-                                    <div class="gallery-info">
-                                        <h5 class="text-white text-uppercase mb-2">World Tour</h5>
-                                        <a href="#" class="btn-hover text-white">View All Place <i
-                                                class="fa fa-arrow-right ms-2"></i></a>
-                                    </div>
-                                </div>
-                                <div class="gallery-plus-icon">
-                                    <a href="img/gallery-3.jpg" data-lightbox="gallery-3" class="my-auto"><i
-                                            class="fas fa-plus fa-2x text-white"></i></a>
+                                <div class="col-6 text-end px-0">
+                                    <a href="#" class="btn-hover btn text-white py-2 px-4">Participer</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
-    <!-- Gallery End -->
+    <!-- Evènement End -->
 
     <!-- Tour Booking Start -->
     <div class="container-fluid booking py-5">
@@ -915,12 +396,15 @@
                 <div class="col-lg-6">
                     <h5 class="section-booking-title pe-3">Réservation en ligne</h5>
                     <h1 class="text-white mb-4">Réservation en ligne</h1>
-                    <p class="text-white mb-4">Réservez facilement votre place pour les évènements culturels et les visites de sites touristiques les plus populaires. Concerts, festivals, musées, monuments... tout est ici.</p>
+                    <p class="text-white mb-4">Réservez facilement votre place pour les évènements culturels et les
+                        visites de sites touristiques les plus populaires. Concerts, festivals, musées, monuments...
+                        tout est ici.</p>
                     <a href="#" class="btn btn-light text-primary rounded-pill py-3 px-5 mt-2">Voir plus</a>
                 </div>
                 <div class="col-lg-6">
                     <h1 class="text-white mb-3">Réservez un évènement ou un site touristique</h1>
-                    <p class="text-white mb-4"> <span class="text-warning"></span> 🎉 Première réservation ? Obtenez jusqu’à 50% de réduction sur les évènements et sites touristiques !</p>
+                    <p class="text-white mb-4"> <span class="text-warning"></span>Première réservation ? Obtenez
+                        jusqu’à 50% de réduction sur les évènements et sites touristiques !</p>
                     <form>
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -942,7 +426,7 @@
                                     <input type="text" class="form-control bg-white border-0" id="datetime"
                                         placeholder="Date & Time" data-target="#date3"
                                         data-toggle="datetimepicker" />
-                                    <label for="datetime">	Date de l’évènement</label>
+                                    <label for="datetime"> Date de l’évènement</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -980,12 +464,14 @@
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control bg-white border-0" placeholder="Message ou besoin spécifique" id="message" style="height: 100px"></textarea>
+                                    <textarea class="form-control bg-white border-0" placeholder="Message ou besoin spécifique" id="message"
+                                        style="height: 100px"></textarea>
                                     <label for="message">Message ou besoin spécifique</label>
                                 </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Réserver maintenant</button>
+                                <button class="btn btn-primary text-white w-100 py-3" type="submit">Réserver
+                                    maintenant</button>
                             </div>
                         </div>
                     </form>
@@ -1008,9 +494,11 @@
                     style="background: linear-gradient(rgba(255, 255, 255, .8), rgba(255, 255, 255, .8)), url(img/about-img-1.png);">
                     <h5 class="section-about-title pe-3">A propos de nous</h5>
                     <h1 class="mb-4">Bienvenue sur <span class="text-primary">TourBen, </span></h1>
-                    <p class="mb-4">votre nouvelle passerelle vers la découverte et la culture. Nous avons imaginé
+                    <p class="mb-4">votre nouvelle passerelle vers la découverte et la culture. Nous avons
+                        imaginé
                         et développé une solution intuitive qui simplifie la réservation de visites de sites
-                        touristiques et l’inscription à des événements culturels, pour que chaque expérience devienne un
+                        touristiques et l’inscription à des événements culturels, pour que chaque expérience
+                        devienne un
                         souvenir inoubliable. </p>
                     <h2 class="text-primary">Notre mission</h2>
                     <div class="row gy-2 gx-4 mb-4">
@@ -1021,19 +509,25 @@
                             </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Diversité : proposer
-                                un large éventail de destinations — monuments historiques, parcs naturels, musées, ainsi
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Diversité :
+                                proposer
+                                un large éventail de destinations — monuments historiques, parcs naturels, musées,
+                                ainsi
                                 que festivals, expositions et spectacles vivants.</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Personnalisation :
-                                permettre à chacun de composer son parcours selon ses envies (visites guidées, visites
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Personnalisation
+                                :
+                                permettre à chacun de composer son parcours selon ses envies (visites guidées,
+                                visites
                                 libres, ateliers thématiques…) et de recevoir des recommandations sur mesure
                             </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Nous mettons un point
-                                d'honneur à rendre notre plateforme accessible 24h/24 et 7j/7, afin que vous puissiez
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Nous mettons un
+                                point
+                                d'honneur à rendre notre plateforme accessible 24h/24 et 7j/7, afin que vous
+                                puissiez
                                 planifier vos visites et événements à tout moment, où que vous soyez
                             </p>
                         </div>
@@ -1042,12 +536,14 @@
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Fiabilité : des
-                                partenariats exclusifs avec des acteurs locaux pour garantir des informations à jour et
+                                partenariats exclusifs avec des acteurs locaux pour garantir des informations à jour
+                                et
                                 des prestations de qualité.
                             </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Sécurité : paiement
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Sécurité :
+                                paiement
                                 en ligne sécurisé et support client à l’écoute avant, pendant et après votre
                                 expérience..</p>
                         </div>

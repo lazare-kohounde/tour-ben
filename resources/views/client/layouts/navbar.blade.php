@@ -60,47 +60,13 @@
                 Evènements
             </a>
 
-            <div class="nav-item dropdown">
-                <a href="#" data-bs-toggle="dropdown" @class([
-                    'nav-link',
-                    'dropdown-toggle',
-                    'active' => request()->routeIs(
-                        'destination',
-                        'tour',
-                        'booking',
-                        'gallery',
-                        'guides',
-                        'testimonial'),
-                ])>
-                    Pages
-                </a>
-                <div class="dropdown-menu m-0">
-                    <a href="{{ route('destination') }}" @class([
-                        'dropdown-item',
-                        'active' => request()->routeIs('destination'),
-                    ])>
-                        Destination
-                    </a>
-                    <a href="{{ route('tour') }}" @class(['dropdown-item', 'active' => request()->routeIs('tour')])>
-                        Explore Tour
-                    </a>
-                    <a href="{{ route('booking') }}" @class(['dropdown-item', 'active' => request()->routeIs('booking')])>
-                        Travel Booking
-                    </a>
-                    <a href="{{ route('gallery') }}" @class(['dropdown-item', 'active' => request()->routeIs('gallery')])>
-                        Our Gallery
-                    </a>
-                    <a href="{{ route('guides') }}" @class(['dropdown-item', 'active' => request()->routeIs('guides')])>
-                        Travel Guides
-                    </a>
-                    <a href="{{ route('testimonial') }}" @class([
-                        'dropdown-item',
-                        'active' => request()->routeIs('testimonial'),
-                    ])>
-                        Testimonial
-                    </a>
-                </div>
-            </div>
+            <a href="{{ route('historique') }}" @class([
+                'nav-item',
+                'nav-link',
+                'active' => request()->routeIs('historique'),
+            ])>
+                Historique
+            </a>
 
             <a href="{{ route('contact') }}" @class([
                 'nav-item',

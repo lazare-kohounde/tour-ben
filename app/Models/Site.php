@@ -9,7 +9,7 @@ class Site extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'idSit';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'nomSit', 'description', 'prix', 'disponibilite','image'

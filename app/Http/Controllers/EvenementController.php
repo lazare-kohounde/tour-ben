@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Evenement;
@@ -7,6 +8,13 @@ use Illuminate\Support\Facades\Storage;
 
 class EvenementController extends Controller
 {
+
+    public function show()
+    {
+        $evenements = Evenement::latest()->get();
+        return view('client.pages.evenements', compact('evenements'));
+    }
+
     public function index()
     {
         $evenements = Evenement::all();
@@ -37,30 +45,29 @@ class EvenementController extends Controller
     public function update(Request $request, $id)
     {
         $evenement = Evenement::findOrFail($id);
-        
+
         try {
             $validatedData = $request->validate([
                 'nomEve' => 'required|string|max:255',
                 'description' => 'required|string',
                 'prix' => 'required|integer',
                 'disponibilite' => 'required|boolean',
-                'image' => 'nullable|image|max:2048',
+                'image' => 'nullable|image',
             ]);
-        
+
             $data = $request->only(['nomEve', 'description', 'prix', 'disponibilite']);
-        
+
             if ($request->hasFile('image')) {
                 if ($evenement->image) {
                     Storage::disk('public')->delete($evenement->image);
                 }
                 $data['image'] = $request->file('image')->store('evenements', 'public');
             }
-        
+
             $evenement->update($data);
-        
+
             // Optionnel : message de succès
             return redirect()->back()->with('success', 'Événement mis à jour avec succès.');
-        
         } catch (\Illuminate\Validation\ValidationException $e) {
             // Gestion des erreurs de validation
             return redirect()->back()
@@ -72,7 +79,7 @@ class EvenementController extends Controller
                 ->with('error', 'Une erreur est survenue lors de la mise à jour de l\'événement : ' . $e->getMessage())
                 ->withInput();
         }
-        
+
 
         return redirect()->back()->with('success', 'Événement modifié avec succès.');
     }
