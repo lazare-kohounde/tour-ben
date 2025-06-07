@@ -34,21 +34,27 @@
         <div class="col-lg-4 ms-auto text-end">
             <div class="d-inline-flex align-items-center" style="height: 45px;">
             @guest
-            <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal">
-                <small class="me-3 text-light">
-                    <i class="fa fa-user me-2"></i>Inscription
-                </small>
-            </a>
+            <div class="flex items-center space-x-4">
+    <!-- Lien d'inscription -->
+    <a href="{{ route('register') }}" class="flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors duration-200">
+        <i class="fas fa-user-plus mr-2"></i>
+        Inscription
+    </a>
+
+    <!-- Lien de connexion -->
+    <a href="{{ route('login') }}" class="flex items-center px-4 py-2 text-sm font-medium text-indigo-600 bg-white rounded-lg hover:bg-gray-50 transition-colors duration-200 border border-indigo-600">
+        <i class="fas fa-sign-in-alt mr-2"></i>
+        Connexion
+    </a>
+</div>
             @endguest
                 
-
+                @auth     
                 <div class="dropdown">
-                    <a href="#" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i
+                    <a href="" class="dropdown-toggle text-light" data-bs-toggle="dropdown"><small><i
                                 class="fa fa-home me-2"></i> Tableau de bord</small></a>
                     <div class="dropdown-menu rounded">
-                        <a href="#" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> Mon Profil</a>
-                        <a href="#" class="dropdown-item"><i class="fas fa-bell me-2"></i> Notifications</a>
-                        <a href="#" class="dropdown-item"><i class="fas fa-cog me-2"></i> Paramètres</a>
+                        <a href="{{ route('profile.edit') }}" class="dropdown-item"><i class="fas fa-user-alt me-2"></i> Mon Profil</a>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button type="submit" class="dropdown-item">
@@ -58,6 +64,7 @@
 
                     </div>
                 </div>
+                @endauth
             </div>
         </div>
     </div>

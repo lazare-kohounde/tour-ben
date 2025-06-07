@@ -19,7 +19,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('client.pages.inscription');
+        return view('auth.register');
     }
 
     /**
@@ -45,6 +45,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect(route('login', absolute: false));
+        return redirect(route('dashboard', absolute: false));
     }
 }
