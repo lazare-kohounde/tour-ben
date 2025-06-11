@@ -146,10 +146,7 @@
                         country: "BJ" // Adapté pour Bénin, modifie si besoin
                     }
                 },
-                onComplete: function(transaction) {
-                    alert('Paiement réussi ! Merci pour votre participation.');
-                    window.location.href = "{{ route('accueilClient') }}"; // Redirection après paiement
-                },
+                
                 onError: function(error) {
                     alert('Une erreur est survenue lors du paiement. Veuillez réessayer.');
                 }
