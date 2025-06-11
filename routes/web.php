@@ -51,6 +51,7 @@ Route::get('/log-admin/organisateur', [AdminController::class, 'adminOrganisateu
 
 
 Route::get('/log-admin/evenement', [EvenementController::class, 'index'])->name('evenements.index');
+Route::get('/log-admin/evenements/{id}', [EvenementController::class, 'detail'])->name('detailevenement');
 Route::post('/log-admin/evenements', [EvenementController::class, 'store'])->name('evenements.store');
 Route::put('/log-admin/evenements/{id}', [EvenementController::class, 'update'])->name('evenements.update');
 Route::delete('/log-admin/evenements/{id}', [EvenementController::class, 'destroy'])->name('evenements.destroy');

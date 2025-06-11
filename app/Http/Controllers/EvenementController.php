@@ -15,6 +15,13 @@ class EvenementController extends Controller
         return view('client.pages.evenements', compact('evenements'));
     }
 
+    public function detail($id)
+    {
+        $evenement = Evenement::findOrFail($id);
+        return view('client.pages.detailevenement', compact('evenement'));
+    }
+
+
     public function index()
     {
         $evenements = Evenement::all();

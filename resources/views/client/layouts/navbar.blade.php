@@ -76,6 +76,5 @@
                 Contact
             </a>
         </div>
-        <a href="#" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Reserver maintenant</a>
     </div>
 </nav>
