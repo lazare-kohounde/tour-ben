@@ -113,7 +113,7 @@
     <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
     <script src="https://cdn.fedapay.com/checkout.js?v=1.1.7"></script>
-    <script>
+     <script>
         document.getElementById('payment-form').addEventListener('submit', function(event) {
             event.preventDefault();
 

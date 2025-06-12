@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Evenement;
+use App\Models\Participation;
+use App\Models\Reservation;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class EvenementController extends Controller
@@ -15,11 +19,40 @@ class EvenementController extends Controller
         return view('client.pages.evenements', compact('evenements'));
     }
 
-    public function detail($id)
+    public function detail($id, Request $request)
     {
         $evenement = Evenement::findOrFail($id);
+
+        // Stocker l'id dans la session
+        session(['evenement_id' => $id]);
+
+        $status = $request->query('transaction-status'); // ou $request->input('transaction-status')
+        $prenom = $request->query('prenom');
+        $nom = $request->query('nom');
+        $email = $request->query('email');
+        $telephone = $request->query('telephone');
+
+        if ($status === 'approved') {
+            $evenementId = session('evenement_id');
+            //dd($evenementId);
+            Participation::create([
+                'idTouriste' => Auth::user()->id,
+                "evenement_id" => $evenementId,
+                'statutPart' => "confirmee",
+                "datePart" => Carbon::now(),
+                "motif" => "Reservation ",
+                "commentaire" => "nnn",
+            ]);
+
+            // Vider la session
+            session()->forget('evenement_id');
+
+            return view('client.pages.index')->with('success', 'Paiement éffectué avec succès');
+        }
+
         return view('client.pages.detailevenement', compact('evenement'));
     }
+
 
 
     public function index()

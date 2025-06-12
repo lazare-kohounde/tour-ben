@@ -9,15 +9,25 @@ class Reservation extends Model
 {
     use HasFactory;
 
+    // Clé primaire personnalisée
     protected $primaryKey = 'idRes';
 
+    // Champs modifiables en masse
     protected $fillable = [
-        'idTouriste', 'statutRes', 'dateRes', 'motif', 'commentaire'
+        'idTouriste',
+        'statutRes',
+        'dateRes',
+        'motif',
+        'commentaire',
+        'evenement_id',  // Ajouté pour correspondre à la table
+        // ajoute 'site_id' si ta table contient ce champ
     ];
+
+    // Relations
 
     public function touriste()
     {
-        return $this->belongsTo(Touriste::class, 'idTouriste');
+        return $this->belongsTo(User::class, 'idTouriste');
     }
 
     public function site()
@@ -25,9 +35,5 @@ class Reservation extends Model
         return $this->belongsTo(Site::class);
     }
 
-    public function evenement()
-    {
-        return $this->belongsTo(Evenement::class);
-    }
+    
 }
-

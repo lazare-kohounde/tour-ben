@@ -20,7 +20,7 @@ class CreateReservationsTable extends Migration
 
             $table->foreignId('site_id')->references('id')->on('sites')->onDelete('cascade');
             $table->foreignId('evenement_id')->references('id')->on('evenements')->onDelete('cascade');
-            $table->foreign('idTouriste')->references('id')->on('touristes')->onDelete('cascade');
+            $table->foreign('idTouriste')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
