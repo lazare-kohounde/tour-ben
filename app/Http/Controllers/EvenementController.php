@@ -37,17 +37,17 @@ class EvenementController extends Controller
             //dd($evenementId);
             Participation::create([
                 'idTouriste' => Auth::user()->id,
-                "evenement_id" => $evenementId,
-                'statutPart' => "confirmee",
-                "datePart" => Carbon::now(),
-                "motif" => "Reservation ",
-                "commentaire" => "nnn",
+                'evenement_id' => $evenementId,
+                'statutPart' => 'confirmee',
+                'datePart' => Carbon::now(),
+                'motif' => 'Reservation',
+                'commentaire' => 'Pas de commentaire',
             ]);
 
             // Vider la session
             session()->forget('evenement_id');
 
-            return view('client.pages.index')->with('success', 'Paiement éffectué avec succès');
+            return view('client.pages.index')->with('success', 'Paiement éffectué avec succès, Merci pour votre participation');
         }
 
         return view('client.pages.detailevenement', compact('evenement'));

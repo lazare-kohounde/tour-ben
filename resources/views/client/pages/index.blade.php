@@ -18,15 +18,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
+    <link href="{{ asset('lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -58,7 +58,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img src="img/carousel-2.jpg" class="img-fluid" alt="Image">
+                    <img src="{{ asset('img/carousel-2.jpg') }}" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explorez
@@ -77,7 +77,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="img/carousel-1.jpg" class="img-fluid" alt="Image">
+                    <img src="{{ asset('img/carousel-1.jpg') }}" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explorer
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="img/carousel-3.jpg" class="img-fluid" alt="Image">
+                    <img src="{{ asset('img/carousel-3.jpg') }}" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explorer
@@ -152,7 +152,7 @@
                 <ul class="nav nav-pills d-inline-flex justify-content-center mb-5">
                     <li class="nav-item">
                         <a class="d-flex mx-3 py-2 border border-primary bg-light rounded-pill active"
-                       href="{{Route('site_touristique')}}">
+                            href="{{Route('site_touristique')}}">
                             <span class="text-dark" style="width: 150px;">Tous voir</span>
                         </a>
                     </li>
@@ -189,8 +189,8 @@
                                     {{-- Ouidah --}}
                                     <div class="col-lg-6">
                                         <div class="destination-img">
-                                            <img class="img-fluid rounded w-100" src="/img/sites/memoire.png"alt=""
-                                                style="height: 250px; object-fit: cover";>
+                                            <img class="img-fluid rounded w-100" src="/img/sites/memoire.png" alt=""
+                                                style="height: 250px; object-fit: cover" ;>
                                             <div class="destination-overlay p-4">
                                                 <a href="#"
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
@@ -210,7 +210,7 @@
                                         <div class="destination-img">
                                             <img class="img-fluid rounded w-100"
                                                 src="/img/sites/palais_royal_abomey.jpg" alt="Palais royal d'Abomey"
-                                                style="height: 250px; object-fit: cover";>
+                                                style="height: 250px; object-fit: cover" ;>
                                             <div class="destination-overlay p-4">
                                                 <a href="#"
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
@@ -229,7 +229,7 @@
                                     <div class="col-lg-6">
                                         <div class="destination-img">
                                             <img class="img-fluid rounded w-100" src="/img/sites/tata_somba.jpg"
-                                                alt="Tata Somba" style="height: 250px; object-fit: cover";>
+                                                alt="Tata Somba" style="height: 250px; object-fit: cover" ;>
                                             <div class="destination-overlay p-4">
                                                 <a href="#"
                                                     class="btn btn-primary text-white rounded-pill border py-2 px-3">20
@@ -250,7 +250,7 @@
                             <div class="col-xl-4">
                                 <div class="destination-img h-100">
                                     <img class="img-fluid rounded w-100 h-100" src="/img/sites/monument_amazone.jpg"
-                                        aria-label="La place Amazone" style="height: 250px; object-fit: cover";
+                                        aria-label="La place Amazone" style="height: 250px; object-fit: cover" ;
                                         alt="">
                                     <div class="destination-overlay p-4">
                                         <a href="#"
@@ -487,7 +487,7 @@
                 <div class="col-lg-5">
                     <div class="h-150"
                         style="border: 50px solid; border-color: transparent #13357B transparent #13357B;">
-                        <img src="img/about-img.jpg" class="img-fluid w-100 h-100" alt="">
+                        <img src="{{ asset('img/about-img.jpg') }}" class="img-fluid w-100 h-100" alt="">
                     </div>
                 </div>
                 <div class="col-lg-7"
@@ -557,10 +557,10 @@
     </div>
     <!-- About End -->
 
-   
 
 
-    
+
+
 
     <!-- Footer Start -->
     @include('client.layouts.footer')
@@ -569,14 +569,14 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
+    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+
 </body>
 
 </html>
