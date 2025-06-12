@@ -30,6 +30,12 @@
 </head>
 
 <body>
+    @if(session('success'))
+    <div style="padding: 15px; background-color: #d4edda; color: #155724; border-radius: 4px; margin-bottom: 20px;">
+        {{ session('success') }}
+    </div>
+    @endif
+
 
     <!-- Spinner Start -->
     <div id="spinner"
@@ -58,7 +64,7 @@
                 </ol>
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                    <img src="{{ asset('img/carousel-2.jpg') }}" class="img-fluid" alt="Image">
+                        <img src="{{ asset('img/carousel-2.jpg') }}" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explorez
@@ -69,15 +75,12 @@
                                     touristiques et culturelles du Bénin. En un clic, réservez des expériences
                                     authentiques qui font rayonner notre patrimoine.
                                 </p>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="#">Découvrez maintenant</a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                    <img src="{{ asset('img/carousel-1.jpg') }}" class="img-fluid" alt="Image">
+                        <img src="{{ asset('img/carousel-1.jpg') }}" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explorer
@@ -90,15 +93,12 @@
                                     planifiez simplement votre aventure et vivez des expériences inoubliables au cœur du
                                     Bénin.
                                 </p>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="#">Découvrez maintenant</a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                    <img src="{{ asset('img/carousel-3.jpg') }}" class="img-fluid" alt="Image">
+                        <img src="{{ asset('img/carousel-3.jpg') }}" class="img-fluid" alt="Image">
                         <div class="carousel-caption">
                             <div class="p-3" style="max-width: 900px;">
                                 <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explorer
@@ -108,10 +108,7 @@
                                     expériences qui vous correspondent et partagez votre passion pour le Bénin.
                                     N’attendez plus, embarquez !
                                 </p>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5"
-                                        href="#">Découvrez maintenant</a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -128,16 +125,7 @@
         </div>
         <!-- Carousel End -->
     </div>
-    <div class="container-fluid search-bar position-relative" style="top: -50%; transform: translateY(-50%);">
-        <div class="container">
-            <div class="position-relative rounded-pill w-100 mx-auto p-5" style="background: rgba(19, 53, 123, 0.8);">
-                <input class="form-control border-0 rounded-pill w-100 py-3 ps-4 pe-5" type="text"
-                    placeholder="Recherche...">
-                <button type="button" class="btn btn-primary rounded-pill py-2 px-4 position-absolute me-2"
-                    style="top: 50%; right: 46px; transform: translateY(-50%);">Recherche</button>
-            </div>
-        </div>
-    </div>
+    
     <!-- Navbar & Hero End -->
 
 

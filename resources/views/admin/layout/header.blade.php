@@ -178,6 +178,12 @@
                     </li>
 
                     <li class="has-submenu">
+                        <a href="{{ Route('admin.participation') }}"><i
+                                class="dripicons-calendar"></i>Participation</a>
+                    </li>
+
+
+                    <li class="has-submenu">
                         <a href="{{ Route('admin.reservation') }}"><i
                                 class="dripicons-calendar"></i>Réservation</a>
                     </li>
